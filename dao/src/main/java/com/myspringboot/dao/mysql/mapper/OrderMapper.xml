@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myspringboot.dao.mysql.dao.OrderMapper">
+
+    <update id="updateByVersion" parameterType="map">
+update goods  set  amount=amount-#{buy} ,version=#{version}+1 where  `code`=#{code} and version=#{version}
+
+    </update>
+    <update id="updateByBuy" parameterType="map">
+update goods  set  amount=amount-#{buy} where  `code`=#{code} and  amount-#{buy}>=0
+
+    </update>
+    <select id="getAmount" resultType="java.lang.Integer">
+select amount from goods where  `code`=#{code}
+    </select>
+    <select id="getVersion">
+select version from goods where  `code`=#{code}  and version=#{version}
+    </select>
+</mapper>
