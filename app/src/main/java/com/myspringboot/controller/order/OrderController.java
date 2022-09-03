@@ -89,4 +89,12 @@ public class OrderController {
     }
 
 
+    @RequestMapping(value = "/test3")
+    @ResponseBody
+    public String test3() throws Exception {
+
+        return "ok"+orderService.getCount();
+
+    }
+
 }

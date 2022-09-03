@@ -1,5 +1,6 @@
 package com.myspringboot.config;
 
+import com.config.ServiceConfiguration;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myspringboot.exception.DzExceptionResolver;
@@ -7,6 +8,7 @@ import com.myspringboot.interceptor.TokenInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -16,7 +18,8 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Configuration
-@ComponentScan(basePackages = "com.myspringboot.controller.**")
+@ComponentScan(basePackages = {"com.myspringboot.controller.**","com.myspringboot.advice"})
+@Import(ServiceConfiguration.class)
 public class WebConfiguration extends WebMvcConfigurerAdapter {
 
 
@@ -43,7 +46,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void configureMessageConverters( List<HttpMessageConverter<?>> converters ) {
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(customJackson2HttpMessageConverter());
     }
 

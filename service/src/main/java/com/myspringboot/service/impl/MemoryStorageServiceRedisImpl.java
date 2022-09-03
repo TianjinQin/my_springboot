@@ -1,20 +1,13 @@
 package com.myspringboot.service.impl;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.jedis.test.Publisher;
-import com.jedis.test.Subscriber;
-import com.jedis.test.SubscriberThread;
 import com.myspringboot.service.MemoryStorageService;
-import lombok.Getter;
-import lombok.Setter;
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Service;
-import redis.clients.jedis.*;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.List;
-import java.util.Map;
 import java.util.function.Function;
 
 

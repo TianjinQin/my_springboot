@@ -1,7 +1,5 @@
 package com.proxy.test;
 
-import com.sun.deploy.net.proxy.ProxyUtils;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class Main {

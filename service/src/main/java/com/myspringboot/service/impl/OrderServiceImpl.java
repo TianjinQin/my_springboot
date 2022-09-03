@@ -1,10 +1,8 @@
 package com.myspringboot.service.impl;
 
-import com.myspringboot.dao.OrderDao;
 import com.myspringboot.dao.mysql.dao.OrderMapper;
 import com.myspringboot.service.MemoryStorageService;
 import com.myspringboot.service.OrderService;
-import lombok.extern.log4j.Log4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
